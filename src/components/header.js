@@ -36,6 +36,8 @@ const HeaderComponent = ({
  }) => {
 
   const renderAlbumBreadCrumb = () => {
+
+    
     if (!albumTitle || !albumId) return null
     return <>
       <i className="fas fa-angle-right"></i>
@@ -55,7 +57,13 @@ const HeaderComponent = ({
   }
 
   return <div className={classes.headerStyle}>
-    <Link className={classes.linkStyle} to={getHomePath()}><i className="fas fa-camera-retro"></i>{" PaoPhotos"}</Link>
+    <Link className={classes.linkStyle} to={getHomePath()}>
+      <i className="fas fa-camera-retro"></i>
+      {(() => {
+        if (!userName) return " PaoPhotos"
+        return ""
+      })()}
+    </Link>
     {(() => {
       return renderUserBreadCrumb()
     })()}
