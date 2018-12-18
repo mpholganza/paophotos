@@ -7,6 +7,11 @@ import { Picture } from "./components/picture.js"
 import { AppBackground } from "./components/appBackground"
 import { AppContainer } from "./components/appContainer"
 import { Header } from "./components/header"
+import {
+  getUserPathTemplate,
+  getAlbumPathTemplate,
+  getPicturePathTemplate
+} from './config/paths.js';
 
 class App extends React.Component {
   render() {
@@ -15,9 +20,9 @@ class App extends React.Component {
         <AppContainer>
           <AppBackground>
             <Route exact path="/" component={Home}></Route>
-            <Route exact path="/user/:userId" component={User}></Route>
-            <Route exact path="/user/:userId/album/:albumId" component={Album}></Route>
-            <Route exact path="/picture/:pictureId" component={Picture}></Route>
+            <Route exact path={getUserPathTemplate()} component={User}></Route>
+            <Route exact path={getAlbumPathTemplate()} component={Album}></Route>
+            <Route exact path={getPicturePathTemplate()} component={Picture}></Route>
           </AppBackground>
         </AppContainer>
       </BrowserRouter>
