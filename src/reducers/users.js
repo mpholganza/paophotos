@@ -1,5 +1,6 @@
 import { Map, Set } from 'immutable'
 import { ActionTypes } from "../actions/actionTypes"
+import { arrayToObjectByKey } from "./arrayToObjectKey"
 
 const initialState = Map({
   userList: Map({}),
@@ -23,13 +24,6 @@ export function reduceUsers(state = initialState, action) {
 
       return state.withMutations((map) => {
         const { userList } = action
-
-        const arrayToObjectByKey = (arr, key) => {
-          return arr.reduce((objSoFar, item) => {
-            objSoFar[item[key]] = item
-            return objSoFar
-          }, {})
-        }
         
         const users = arrayToObjectByKey(userList, "id")
 
