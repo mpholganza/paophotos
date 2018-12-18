@@ -1,6 +1,7 @@
 import React from "react"
 import injectSheet from "react-jss"
 import classNames from "classnames"
+import { foregroundColor } from "../styles/color";
 
 const backgroundStyle = {
   display: "flex",
@@ -8,7 +9,7 @@ const backgroundStyle = {
   alignItems: "center",
   justifyContent: "center",
   fontSize: "calc(10px + 2vmin)",
-  color: "white"
+  color: foregroundColor
 }
 
 export function AppBackgroundComponent({ classes, children }) {

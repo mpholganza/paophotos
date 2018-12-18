@@ -6,6 +6,14 @@ import PropTypes from 'prop-types'
 import classNames from "classnames"
 
 import { getHomePath, getUserPath, getAlbumPath } from '../config/paths'
+
+// Styles
+import { linkStyle } from "../styles/link"
+import {
+  backgroundColor,
+  foregroundColor
+} from "../styles/color"
+
 const height = 107
 
 const headerStyle = {
@@ -16,20 +24,11 @@ const headerStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "#331287",
-  color: "white",
+  backgroundColor,
+  color: foregroundColor,
   fontFamily: "'Palanquin', sans-serif"
 }
 
-const linkStyle = {
-  textDecoration: 'none',
-  display: 'block',
-  padding: '.5em',
-  color: 'white',
-  '&:hover': {
-    background: "#00bfb3",
-  }
-}
 
 const HeaderComponent = ({
   classes,
@@ -38,19 +37,12 @@ const HeaderComponent = ({
   albumId,
   albumTitle
  }) => {
-  const headerClassName = classNames({
-    [classes.headerStyle]: true
-  })
-
-  const linkClassName = classNames({
-    [classes.linkStyle]: true
-  })
 
   const renderAlbumBreadCrumb = () => {
     if (!albumTitle || !albumId) return null
     return <>
       <i className="fas fa-angle-right"></i>
-      <Link className={linkClassName} to={getAlbumPath(userId, albumId)}>{` ${albumTitle}`}</Link>
+      <Link className={classes.linkStyle} to={getAlbumPath(userId, albumId)}>{` ${albumTitle}`}</Link>
     </>
   }
 
@@ -58,15 +50,15 @@ const HeaderComponent = ({
     if (!userName || !userId) return null
     return <>
       <i className="fas fa-angle-right"></i>
-      <Link className={linkClassName} to={getUserPath(userId)}>{` ${userName}`}</Link>
+      <Link className={classes.linkStyle} to={getUserPath(userId)}>{` ${userName}`}</Link>
       {(() => {
         return renderAlbumBreadCrumb()
       })()}
     </>
   }
 
-  return <div className={headerClassName}>
-    <Link className={linkClassName} to={getHomePath()}><i className="fas fa-camera-retro"></i>{" PaoPhotos"}</Link>
+  return <div className={classes.headerStyle}>
+    <Link className={classes.linkStyle} to={getHomePath()}><i className="fas fa-camera-retro"></i>{" PaoPhotos"}</Link>
     {(() => {
       return renderUserBreadCrumb()
     })()}

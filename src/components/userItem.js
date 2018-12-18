@@ -7,25 +7,11 @@ import { getUserPath } from "../config/paths"
 // Components
 import { Link } from "react-router-dom"
 
-
-const linkStyle = {
-  textDecoration: 'none',
-  display: 'block',
-  padding: '.5em',
-  color: 'white',
-  '&:hover': {
-    background: "#00bfb3",
-  }
-}
+import { linkStyle } from "../styles/link"
 
 export function UserItemComponent({ classes, user }) {
   const { id, name } = user
-
-  const className = classNames({
-    [classes.linkStyle]: true
-  })
-
-  return <Link className={className} to={getUserPath(id)}>{name}</Link>
+  return <Link className={classes.linkStyle} to={getUserPath(id)}>{name}</Link>
 }
 
 export const UserItem = injectSheet({

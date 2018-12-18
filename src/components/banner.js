@@ -2,10 +2,11 @@ import React from "react"
 import { connect } from "react-redux"
 import injectSheet from "react-jss"
 import classNames from "classnames"
+import { highlightColor } from "../styles/color";
 
 const bannerStyle = {
   width: "100%",
-  backgroundColor: "#00bfb3",
+  backgroundColor: highlightColor,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

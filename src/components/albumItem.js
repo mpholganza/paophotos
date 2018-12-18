@@ -11,23 +11,11 @@ import { getCurrentUserId } from "../selectors/users"
 // Components
 import { Link } from "react-router-dom"
 
-const linkStyle = {
-  textDecoration: 'none',
-  textAlign: 'center',
-  display: 'block',
-  padding: '.5em',
-  color: 'white',
-  '&:hover': {
-    background: "#00bfb3",
-  }
-}
+// Styles
+import { linkStyle } from "../styles/link"
 
 export function AlbumItemComponent({ classes, albumId, albumTitle, userId }) {
-  const className = classNames({
-    [classes.linkStyle]: true
-  })
-
-  return <Link className={className} to={getAlbumPath(userId, albumId)}>{albumTitle}</Link>
+  return <Link className={classes.linkStyle} to={getAlbumPath(userId, albumId)}>{albumTitle}</Link>
 }
 
 const mapStateToProps = (state, props) => {
