@@ -1,13 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 import classNames from "classnames"
-import { getCurrentUserName } from '../selectors/users'
-import { getHeaderTitle } from "../selectors/header"
-import { getCurrentAlbumTitle } from "../selectors/albums"
 
 const height = 107
 
@@ -34,8 +30,14 @@ const linkStyle = {
   }
 }
 
-const HeaderComponent = ({ classes, headerTitle, userName }) => {
-  const className = classNames({
+const HeaderComponent = ({
+  classes,
+  userId,
+  userName,
+  albumId,
+  albumName
+ }) => {
+  const headerClassName = classNames({
     [classes.headerStyle]: true
   })
 
@@ -43,24 +45,34 @@ const HeaderComponent = ({ classes, headerTitle, userName }) => {
     [classes.linkStyle]: true
   })
 
-  return <div className={className}>
-    <Link className={linkClassName} to="/"><i className="fas fa-camera-retro"></i></Link>
-    <i className="fas fa-angle-right"></i>
-    <Link className={linkClassName} to="/">{" Photographers"}</Link>
-    <i className="fas fa-angle-right"></i>
-    <Link className={linkClassName} to="/">{userName}</Link>
-  </div>
-}
-
-const mapStateToProps = (state, props) => {
-  return {
-    headerTitle: getHeaderTitle(state, props),
-    userName: getCurrentUserName(state, props)
-    // albumName: getAlbumName(state, props)
+  const renderAlbumBreadCrumb = () => {
+    if (!albumName || albumName) return null
+    return <>
+      <i className="fas fa-angle-right"></i>
+      <Link className={linkClassName} to={`/album/${albumId}`}>{` ${albumName}`}</Link>
+    </>
   }
+
+  const renderUserBreadCrumb = () => {
+    if (!userName || !userId) return null
+    return <>
+      <i className="fas fa-angle-right"></i>
+      <Link className={linkClassName} to={`/user/${userId}`}>{` ${userName}`}</Link>
+      {(() => {
+        return renderAlbumBreadCrumb()
+      })()}
+    </>
+  }
+
+  return <div className={headerClassName}>
+    <Link className={linkClassName} to="/"><i className="fas fa-camera-retro"></i>{" PaoPhotos"}</Link>
+    {(() => {
+      return renderUserBreadCrumb()
+    })()}
+  </div>
 }
 
 export const Header = injectSheet({
   headerStyle,
   linkStyle
-})(connect(mapStateToProps)(HeaderComponent))
+})(HeaderComponent)

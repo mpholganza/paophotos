@@ -26,9 +26,10 @@ class UserComponent extends React.Component {
   }
 
   render() {
+    const { userId } = this.props.match.params
     const { currentUserName, albumList, albumListIsLoaded } = this.props
     return <>
-      <Header></Header>
+      <Header userId={userId} userName={currentUserName}></Header>
       {(() => {
         if (!currentUserName) return <Loading></Loading>
         return <h3>{`${currentUserName}'s Albums`}</h3>
