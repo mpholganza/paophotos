@@ -4,7 +4,8 @@ import injectSheet from 'react-jss'
 import classNames from "classnames"
 
 import { Link } from "react-router-dom"
-import { getAlbum } from "../selectors/albums.js"
+import { getCurrentAlbumTitle, getCurrentAlbumId } from "../selectors/albums.js"
+import { getCurrentUserId } from "../selectors/users.js"
 
 const linkStyle = {
   textDecoration: 'none',
@@ -16,19 +17,19 @@ const linkStyle = {
   }
 }
 
-export function AlbumItemComponent({ classes, album }) {
+export function AlbumItemComponent({ classes, albumId, albumTitle, userId }) {
   const className = classNames({
     [classes.linkStyle]: true
   })
 
-  const { title, id } = album
-  return <Link className={className} to={`/album/${id}`}>{title}</Link>
+  return <Link className={className} to={`/user/${userId}/album/${albumId}`}>{albumTitle}</Link>
 }
-
 
 const mapStateToProps = (state, props) => {
   return {
-    album: getAlbum(state, props)
+    albumId: getCurrentAlbumId(state, props),
+    albumTitle: getCurrentAlbumTitle(state, props),
+    userId: getCurrentUserId(state, props)
   }
 }
 

@@ -31,14 +31,10 @@ class UserComponent extends React.Component {
     return <>
       <Header userId={userId} userName={currentUserName}></Header>
       {(() => {
-        if (!currentUserName) return <Loading></Loading>
-        return <h3>{`${currentUserName}'s Albums`}</h3>
-      })()}
-      {(() => {
         if (!albumListIsLoaded) return <Loading></Loading>
         return <AlbumList>{
           albumList.toArray().map((albumId) => {
-            return <AlbumItem key={`albumItem-${albumId}`} albumId={albumId}></AlbumItem>
+            return <AlbumItem key={`albumItem-${albumId}`} albumId={albumId} {...this.props}></AlbumItem>
           })
         }</AlbumList>
       })()}

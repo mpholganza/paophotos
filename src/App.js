@@ -15,9 +15,9 @@ class App extends React.Component {
         <AppContainer>
           <AppBackground>
             <Route exact path="/" component={Home}></Route>
-            <Route path="/user/:userId" component={User}></Route>
-            <Route path="/album/:albumId" component={Album}></Route>
-            <Route path="/picture/:pictureId" component={Picture}></Route>
+            <Route exact path="/user/:userId" component={User}></Route>
+            <Route exact path="/user/:userId/album/:albumId" component={Album}></Route>
+            <Route exact path="/picture/:pictureId" component={Picture}></Route>
           </AppBackground>
         </AppContainer>
       </BrowserRouter>
@@ -25,4 +25,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App

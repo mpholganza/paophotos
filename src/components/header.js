@@ -17,7 +17,6 @@ const headerStyle = {
   justifyContent: "center",
   backgroundColor: "#331287",
   color: "white"
-  // textShadow: "4px 3px 0 #000"
 }
 
 const linkStyle = {
@@ -35,7 +34,7 @@ const HeaderComponent = ({
   userId,
   userName,
   albumId,
-  albumName
+  albumTitle
  }) => {
   const headerClassName = classNames({
     [classes.headerStyle]: true
@@ -46,10 +45,10 @@ const HeaderComponent = ({
   })
 
   const renderAlbumBreadCrumb = () => {
-    if (!albumName || albumName) return null
+    if (!albumTitle || !albumId) return null
     return <>
       <i className="fas fa-angle-right"></i>
-      <Link className={linkClassName} to={`/album/${albumId}`}>{` ${albumName}`}</Link>
+      <Link className={linkClassName} to={`/user/${userId}/album/${albumId}`}>{` ${albumTitle}`}</Link>
     </>
   }
 
