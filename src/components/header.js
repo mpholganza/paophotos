@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-
 import injectSheet from "react-jss"
-import PropTypes from 'prop-types'
-import classNames from "classnames"
 
 import { getHomePath, getUserPath, getAlbumPath } from '../config/paths'
 

@@ -1,7 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
 import injectSheet from "react-jss"
-import classNames from "classnames"
 import { getAlbumPath } from "../config/paths"
 
 // Selectors

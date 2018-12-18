@@ -6,7 +6,7 @@ import { Album } from "./components/album"
 import { Picture } from "./components/picture"
 import { AppBackground } from "./components/appBackground"
 import { AppContainer } from "./components/appContainer"
-import { Header } from "./components/header"
+
 import {
   getHomePath,
   getUserPathTemplate,

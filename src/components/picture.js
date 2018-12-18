@@ -19,7 +19,7 @@ export function PictureComponent({ picture, userId, albumId }) {
         if (!picture) return "Loading ..."
         const { url, title } = picture
         return <>
-          <img src={url} height="600" width="600"></img>
+          <img src={url} alt={title} height="600" width="600"></img>
           <h3 style={{color: "white"}}>{title}</h3>
         </>
       })()}

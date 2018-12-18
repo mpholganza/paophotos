@@ -1,7 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
 import injectSheet from "react-jss"
-import classNames from "classnames"
 
 import { getPicturePath } from "../config/paths"
 
@@ -30,7 +29,7 @@ const descriptionStyle = {
 
 export function PictureItemComponent({ classes, picture, userId, albumId }) {
   return <Link className={classes.linkStyle} to={getPicturePath(userId, albumId, picture.id)}>
-    <img className={classes.pictureStyle} src={picture.thumbnailUrl} width="150" height="150"></img>
+    <img className={classes.pictureStyle} src={picture.thumbnailUrl} alt={picture.title} width="150" height="150"></img>
     <div className={classes.descriptionStyle}>{picture.title}</div>
   </Link>
 }

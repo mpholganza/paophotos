@@ -1,6 +1,5 @@
 import React from "react"
 import injectSheet from "react-jss"
-import classNames from "classnames"
 
 const albumListStyle = {
   display: "flex",
@@ -10,11 +9,7 @@ const albumListStyle = {
 }
 
 export function AlbumListComponent({ classes, children }) {
-  const className = classNames({
-    [classes.albumListStyle]: true
-  })
-
-  return <div className={className}>
+  return <div className={classes.albumListStyle}>
     {children}
   </div>
 }

@@ -1,4 +1,4 @@
-import { Map, Set } from 'immutable'
+import { Map } from 'immutable'
 import { ActionTypes } from "../actions/actionTypes"
 import { arrayToObjectByKey } from "./arrayToObjectKey"
 
