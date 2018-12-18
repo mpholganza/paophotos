@@ -39,7 +39,8 @@ class AlbumComponent extends React.Component {
         if (!pictureListIsLoaded) return <Loading></Loading>
         return <PictureList>{
           pictureList.toArray().map((pictureId) => {
-            return <PictureItem key={`pictureItem-${pictureId}`} pictureId={pictureId}></PictureItem>
+            return <PictureItem key={`pictureItem-${pictureId}`}
+              userId={userId} albumId={albumId} pictureId={pictureId}></PictureItem>
           })
         }</PictureList>
       })()}

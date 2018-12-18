@@ -11,7 +11,8 @@ const overlayStyle = {
   left: 0,
   display: "flex",
   alignItems: "center",
-  justifyContent: "center"
+  justifyContent: "center",
+  flexDirection: "column"
 }
 
 const OverlayComponent = ({classes, children, onClick}) => {

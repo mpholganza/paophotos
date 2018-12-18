@@ -12,6 +12,7 @@ import { getAlbumPath } from "../config/paths.js"
 
 const linkStyle = {
   textDecoration: 'none',
+  textAlign: 'center',
   display: 'block',
   padding: '.5em',
   color: 'white',

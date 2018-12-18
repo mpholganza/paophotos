@@ -18,7 +18,8 @@ const headerStyle = {
   alignItems: "center",
   justifyContent: "center",
   backgroundColor: "#331287",
-  color: "white"
+  color: "white",
+  fontFamily: "'Palanquin', sans-serif"
 }
 
 const linkStyle = {

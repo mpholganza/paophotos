@@ -5,6 +5,9 @@ import classNames from "classnames"
 
 import { getPicture } from "../selectors/pictures"
 
+import { Link } from "react-router-dom"
+import { getPicturePath } from "../config/paths"
+
 const pictureItemStyle = {
   cursor: "pointer",
   "&:hover": {
@@ -26,7 +29,18 @@ const descriptionStyle = {
   margin: "10px"
 }
 
-export function PictureItemComponent({ classes, picture }) {
+const linkStyle = {
+  textDecoration: 'none',
+  display: 'block',
+  padding: '.5em',
+  color: 'white',
+  '&:hover': {
+    background: "#00bfb3",
+  }
+}
+
+
+export function PictureItemComponent({ classes, picture, userId, albumId }) {
   const pictureClassName = classNames({
     [classes.pictureStyle]: true
   })
@@ -39,10 +53,14 @@ export function PictureItemComponent({ classes, picture }) {
     [classes.pictureItemStyle]: true
   })
   
-  return <div className={pictureItemClassName} onClick={()=>{}}>
+  const linkClassName = classNames({
+    [classes.linkStyle]: true
+  })
+
+  return <Link className={linkClassName} to={getPicturePath(userId, albumId, picture.id)}>
     <img className={pictureClassName} src={picture.thumbnailUrl} width="150" height="150"></img>
     <div className={descriptionClassName}>{picture.title}</div>
-  </div>
+  </Link>
 }
 
 const mapStateToProps = (state, props) => {
@@ -54,5 +72,6 @@ const mapStateToProps = (state, props) => {
 export const PictureItem = injectSheet({
   pictureItemStyle,
   pictureStyle,
-  descriptionStyle
+  descriptionStyle,
+  linkStyle
 })(connect(mapStateToProps)(PictureItemComponent))
