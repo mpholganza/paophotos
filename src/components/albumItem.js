@@ -1,14 +1,15 @@
 import React from "react"
-import { connect } from 'react-redux'
-import injectSheet from 'react-jss'
+import { connect } from "react-redux"
+import injectSheet from "react-jss"
 import classNames from "classnames"
+import { getAlbumPath } from "../config/paths"
 
+// Selectors
+import { getCurrentAlbumTitle, getCurrentAlbumId } from "../selectors/albums"
+import { getCurrentUserId } from "../selectors/users"
+
+// Components
 import { Link } from "react-router-dom"
-
-import { getCurrentAlbumTitle, getCurrentAlbumId } from "../selectors/albums.js"
-import { getCurrentUserId } from "../selectors/users.js"
-
-import { getAlbumPath } from "../config/paths.js"
 
 const linkStyle = {
   textDecoration: 'none',

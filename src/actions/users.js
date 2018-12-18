@@ -1,7 +1,7 @@
 import { ActionTypes } from "./actionTypes"
 import { fetchUsers } from "../data/users"
 
-import { getUserListIsLoaded, getUserListIsLoading } from "../selectors/users.js"
+import { getUserListIsLoaded, getUserListIsLoading } from "../selectors/users"
 
 export function loadUsersIfNeeded() {
   return (dispatch, getState) => {

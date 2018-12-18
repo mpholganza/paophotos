@@ -1,22 +1,22 @@
 import React from "react"
-import { connect } from 'react-redux'
+import { connect } from "react-redux"
 
-import { UserItem } from "./userItem"
-import { UserList } from "./userList"
-
-import { Header } from "./header"
-import { Banner } from "./banner"
-
+// Selectors
 import {
   getUserList,
   getUserListIsLoaded,
   getUserListIsLoading
 } from "../selectors/users"
 
-import { Loading } from "./loading"
-
+// Actions
 import { loadUsersIfNeeded } from '../actions/users'
 
+// Components
+import { UserItem } from "./userItem"
+import { UserList } from "./userList"
+import { Header } from "./header"
+import { Banner } from "./banner"
+import { Loading } from "./loading"
 
 class HomeComponent extends React.Component {
 

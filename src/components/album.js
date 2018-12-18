@@ -1,22 +1,25 @@
 import React from "react"
-import { connect } from 'react-redux'
+import { connect } from "react-redux"
 
-import { getCurrentAlbumTitle } from "../selectors/albums.js"
+// Selectors
+import { getCurrentAlbumTitle } from "../selectors/albums"
 import {
   getPictureListForCurrentAlbum,
   getPictureListForCurrentAlbumIsLoaded,
   getPictureListForCurrentAlbumIsLoading
-} from "../selectors/pictures.js"
+} from "../selectors/pictures"
+import { getCurrentUserName } from "../selectors/users";
 
-import { loadUsersIfNeeded } from '../actions/users.js'
-import { loadAlbumsIfNeeded } from "../actions/albums.js"
-import { loadPicturesIfNeeded } from "../actions/pictures.js"
+// Actions
+import { loadUsersIfNeeded } from "../actions/users"
+import { loadAlbumsIfNeeded } from "../actions/albums"
+import { loadPicturesIfNeeded } from "../actions/pictures"
 
-import { Loading } from "./loading.js"
-import { PictureList } from "./pictureList.js"
-import { PictureItem } from "./pictureItem.js"
-import { Header } from "./header.js"
-import { getCurrentUserName, getCurrentUserId } from "../selectors/users.js";
+// Components
+import { Loading } from "./loading"
+import { PictureList } from "./pictureList"
+import { PictureItem } from "./pictureItem"
+import { Header } from "./header"
 
 class AlbumComponent extends React.Component {
   componentDidMount() {

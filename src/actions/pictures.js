@@ -4,7 +4,7 @@ import { fetchPictures } from "../data/pictures"
 import {
   getPictureListForCurrentAlbumIsLoaded,
   getPictureListForCurrentAlbumIsLoading
-} from "../selectors/pictures.js"
+} from "../selectors/pictures"
 
 export function loadPicturesIfNeeded(albumId, props) {
   return (dispatch, getState) => {

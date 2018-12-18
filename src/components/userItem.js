@@ -1,10 +1,12 @@
 import React from "react"
-import injectSheet from 'react-jss'
+import injectSheet from "react-jss"
 import classNames from "classnames"
 
+import { getUserPath } from "../config/paths"
+
+// Components
 import { Link } from "react-router-dom"
 
-import { getUserPath } from "../config/paths"
 
 const linkStyle = {
   textDecoration: 'none',

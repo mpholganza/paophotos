@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import { Home } from "./components/home.js"
-import { User } from "./components/user.js"
-import { Album } from "./components/album.js"
-import { Picture } from "./components/picture.js"
+import { Home } from "./components/home"
+import { User } from "./components/user"
+import { Album } from "./components/album"
+import { Picture } from "./components/picture"
 import { AppBackground } from "./components/appBackground"
 import { AppContainer } from "./components/appContainer"
 import { Header } from "./components/header"
@@ -12,7 +12,7 @@ import {
   getUserPathTemplate,
   getAlbumPathTemplate,
   getPicturePathTemplate
-} from './config/paths.js'
+} from './config/paths'
 
 class App extends React.Component {
   render() {

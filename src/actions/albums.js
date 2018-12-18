@@ -4,7 +4,7 @@ import { fetchAlbums } from "../data/albums"
 import {
   getAlbumListForCurrentUserIsLoaded,
   getAlbumListForCurrentUserIsLoading
-} from "../selectors/albums.js"
+} from "../selectors/albums"
 
 export function loadAlbumsIfNeeded(userId, props) {
   return (dispatch, getState) => {

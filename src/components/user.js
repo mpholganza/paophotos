@@ -1,21 +1,23 @@
 import React from "react"
-import { connect } from 'react-redux'
+import { connect } from "react-redux"
 
-import { Loading } from "./loading.js"
-import { AlbumList } from "./albumList.js"
-import { AlbumItem } from "./albumItem.js"
-import { Header } from "./header.js"
+// Selectors
+import { getCurrentUserName } from "../selectors/users"
 
-import { getCurrentUserName } from "../selectors/users.js"
-
-import { loadUsersIfNeeded } from '../actions/users.js'
-import { loadAlbumsIfNeeded } from "../actions/albums.js"
+// Actions
+import { loadUsersIfNeeded } from '../actions/users'
+import { loadAlbumsIfNeeded } from "../actions/albums"
 import {
   getAlbumListForCurrentUser,
   getAlbumListForCurrentUserIsLoaded,
   getAlbumListForCurrentUserIsLoading
-} from "../selectors/albums.js";
+} from "../selectors/albums"
 
+// Components
+import { Loading } from "./loading"
+import { AlbumList } from "./albumList"
+import { AlbumItem } from "./albumItem"
+import { Header } from "./header"
 
 class UserComponent extends React.Component {
   componentDidMount() {

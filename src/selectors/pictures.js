@@ -1,7 +1,7 @@
 import { Seq } from "immutable"
 import { createSelector } from "reselect"
 
-import { getCurrentAlbumId } from "./albums.js"
+import { getCurrentAlbumId } from "./albums"
 
 export function getCurrentPictureId(state, props) {
   return props.pictureId || props.match.params.pictureId

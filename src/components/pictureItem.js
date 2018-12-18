@@ -1,12 +1,15 @@
 import React from "react"
-import { connect } from 'react-redux'
-import injectSheet from 'react-jss'
+import { connect } from "react-redux"
+import injectSheet from "react-jss"
 import classNames from "classnames"
 
+import { getPicturePath } from "../config/paths"
+
+// Selectors
 import { getPicture } from "../selectors/pictures"
 
+// Components
 import { Link } from "react-router-dom"
-import { getPicturePath } from "../config/paths"
 
 const pictureItemStyle = {
   cursor: "pointer",
