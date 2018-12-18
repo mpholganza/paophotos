@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { Home } from "./components/home.js"
 import { User } from "./components/user.js"
 import { Album } from "./components/album.js"
@@ -20,9 +20,11 @@ class App extends React.Component {
       <BrowserRouter>
         <AppContainer>
           <AppBackground>
-            <Route exact path={getHomePath()} component={Home}></Route>
-            <Route exact path={getUserPathTemplate()} component={User}></Route>
-            <Route exact path={getAlbumPathTemplate()} component={Album}></Route>
+            <Switch>
+              <Route path={getAlbumPathTemplate()} component={Album}></Route>
+              <Route exact path={getUserPathTemplate()} component={User}></Route>
+              <Route exact path={getHomePath()} component={Home}></Route>
+            </Switch>
             <Route exact path={getPicturePathTemplate()} component={Picture}></Route>
           </AppBackground>
         </AppContainer>

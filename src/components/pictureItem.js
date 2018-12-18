@@ -6,7 +6,10 @@ import classNames from "classnames"
 import { getPicture } from "../selectors/pictures"
 
 const pictureItemStyle = {
-  cursor: "pointer"
+  cursor: "pointer",
+  "&:hover": {
+    backgroundColor: "#00bfb3"
+  }
 }
 
 const pictureStyle = {
@@ -18,11 +21,11 @@ const descriptionStyle = {
   height: "3.5em",
   fontSize: "14px",
   width: "150px",
-  // whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
   margin: "10px"
 }
+
 export function PictureItemComponent({ classes, picture }) {
   const pictureClassName = classNames({
     [classes.pictureStyle]: true
