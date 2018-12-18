@@ -4,6 +4,8 @@ import classNames from "classnames"
 
 import { Link } from "react-router-dom"
 
+import { getUserPath } from "../config/paths"
+
 const linkStyle = {
   textDecoration: 'none',
   display: 'block',
@@ -21,7 +23,7 @@ export function UserItemComponent({ classes, user }) {
     [classes.linkStyle]: true
   })
 
-  return <Link className={className} to={`/user/${id}`}>{name}</Link>
+  return <Link className={className} to={getUserPath(id)}>{name}</Link>
 }
 
 export const UserItem = injectSheet({

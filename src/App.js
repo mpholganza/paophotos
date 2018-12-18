@@ -8,10 +8,11 @@ import { AppBackground } from "./components/appBackground"
 import { AppContainer } from "./components/appContainer"
 import { Header } from "./components/header"
 import {
+  getHomePath,
   getUserPathTemplate,
   getAlbumPathTemplate,
   getPicturePathTemplate
-} from './config/paths.js';
+} from './config/paths.js'
 
 class App extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class App extends React.Component {
       <BrowserRouter>
         <AppContainer>
           <AppBackground>
-            <Route exact path="/" component={Home}></Route>
+            <Route exact path={getHomePath()} component={Home}></Route>
             <Route exact path={getUserPathTemplate()} component={User}></Route>
             <Route exact path={getAlbumPathTemplate()} component={Album}></Route>
             <Route exact path={getPicturePathTemplate()} component={Picture}></Route>

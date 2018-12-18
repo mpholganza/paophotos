@@ -3,17 +3,17 @@ export function getHomePath() {
 }
 
 export function getUserPath(userId) {
-  const path = `/user/${userId}`
+  const path = `/u/${userId}`
   return path
 }
 
 export function getAlbumPath(userId, albumId) {
-  const path = `/user/${userId}/album/${albumId}`
+  const path = `/u/${userId}/a/${albumId}`
   return path
 }
 
 export function getPicturePath(userId, albumId, pictureId) {
-  const path = `/user/${userId}/album/${albumId}/picture/${pictureId}`
+  const path = `/u/${userId}/a/${albumId}/p/${pictureId}`
   return path
 }
 

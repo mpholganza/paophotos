@@ -5,6 +5,8 @@ import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 import classNames from "classnames"
 
+import { getHomePath, getUserPath, getAlbumPath } from '../config/paths'
+
 const height = 107
 
 const headerStyle = {
@@ -48,7 +50,7 @@ const HeaderComponent = ({
     if (!albumTitle || !albumId) return null
     return <>
       <i className="fas fa-angle-right"></i>
-      <Link className={linkClassName} to={`/user/${userId}/album/${albumId}`}>{` ${albumTitle}`}</Link>
+      <Link className={linkClassName} to={getAlbumPath(userId, albumId)}>{` ${albumTitle}`}</Link>
     </>
   }
 
@@ -56,7 +58,7 @@ const HeaderComponent = ({
     if (!userName || !userId) return null
     return <>
       <i className="fas fa-angle-right"></i>
-      <Link className={linkClassName} to={`/user/${userId}`}>{` ${userName}`}</Link>
+      <Link className={linkClassName} to={getUserPath(userId)}>{` ${userName}`}</Link>
       {(() => {
         return renderAlbumBreadCrumb()
       })()}
@@ -64,7 +66,7 @@ const HeaderComponent = ({
   }
 
   return <div className={headerClassName}>
-    <Link className={linkClassName} to="/"><i className="fas fa-camera-retro"></i>{" PaoPhotos"}</Link>
+    <Link className={linkClassName} to={getHomePath()}><i className="fas fa-camera-retro"></i>{" PaoPhotos"}</Link>
     {(() => {
       return renderUserBreadCrumb()
     })()}
