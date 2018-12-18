@@ -5,16 +5,17 @@ import { UserItem } from "./userItem"
 import { UserList } from "./userList"
 
 import { Header } from "./header"
+import { Banner } from "./banner"
 
 import {
   getUserList,
   getUserListIsLoaded,
   getUserListIsLoading
-} from "../selectors/users.js"
+} from "../selectors/users"
 
-import { Loading } from "./loading.js"
+import { Loading } from "./loading"
 
-import { loadUsersIfNeeded } from '../actions/users.js'
+import { loadUsersIfNeeded } from '../actions/users'
 
 
 class HomeComponent extends React.Component {
@@ -29,7 +30,7 @@ class HomeComponent extends React.Component {
 
     return <>
       <Header></Header>
-      {/* <h3>{"Photographers"}</h3> */}
+      <Banner></Banner>
       {(() => {
         if (!userListIsLoaded) return <Loading></Loading>
         return <UserList>{
