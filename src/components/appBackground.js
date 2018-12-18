@@ -3,8 +3,6 @@ import injectSheet from 'react-jss'
 import classNames from "classnames"
 
 const backgroundStyle = {
-  backgroundColor: "#4f1bcf",
-  minHeight: 'calc(100vh - 107px)',
   display: "flex",
   flexDirection: "column",
   alignItems: "center",

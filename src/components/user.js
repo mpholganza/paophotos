@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Loading } from "./loading.js"
 import { AlbumList } from "./albumList.js"
 import { AlbumItem } from "./albumItem.js"
+import { Header } from "./header.js"
 
 import { getCurrentUserName } from "../selectors/users.js"
 
@@ -27,6 +28,7 @@ class UserComponent extends React.Component {
   render() {
     const { currentUserName, albumList, albumListIsLoaded } = this.props
     return <>
+      <Header></Header>
       {(() => {
         if (!currentUserName) return <Loading></Loading>
         return <h3>{`${currentUserName}'s Albums`}</h3>

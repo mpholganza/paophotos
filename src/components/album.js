@@ -13,7 +13,7 @@ import { loadPicturesIfNeeded } from "../actions/pictures.js"
 import { Loading } from "./loading.js"
 import { PictureList } from "../components/pictureList.js"
 import { PictureItem } from "../components/pictureItem.js"
-import { Link } from "react-router-dom"
+import { Header } from "../components/header.js"
 
 class AlbumComponent extends React.Component {
   componentDidMount() {
@@ -26,6 +26,7 @@ class AlbumComponent extends React.Component {
     const { albumTitle, pictureList, pictureListIsLoaded } = this.props
   
     return <>
+      <Header></Header>
       {(() => {
         if (!albumTitle) return null
         return <h3>{albumTitle}</h3>

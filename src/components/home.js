@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { UserItem } from "./userItem"
 import { UserList } from "./userList"
 
-// import { Header } from "./header"
+import { Header } from "./header"
 
 import {
   getUserList,
@@ -28,6 +28,7 @@ class HomeComponent extends React.Component {
     const { userListIsLoaded, userList } = this.props
 
     return <>
+      <Header></Header>
       {/* <h3>{"Photographers"}</h3> */}
       {(() => {
         if (!userListIsLoaded) return <Loading></Loading>

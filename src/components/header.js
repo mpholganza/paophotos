@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
-import { withRouter } from 'react-router-dom'
 
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
@@ -61,7 +60,7 @@ const mapStateToProps = (state, props) => {
   }
 }
 
-export const Header = withRouter(injectSheet({
+export const Header = injectSheet({
   headerStyle,
   linkStyle
-})(connect(mapStateToProps)(HeaderComponent)))
+})(connect(mapStateToProps)(HeaderComponent))

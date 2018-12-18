@@ -13,7 +13,6 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <AppContainer>
-          <Header></Header>
           <AppBackground>
             <Route exact path="/" component={Home}></Route>
             <Route path="/user/:userId" component={User}></Route>
