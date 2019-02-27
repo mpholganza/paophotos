@@ -1,9 +1,10 @@
-This project was created for demo purposes
+This is a very basic photo gallery web application created purely for demonstration purposes.
+It uses fake data from https://jsonplaceholder.typicode.com/
 
 PaoPhotos!
 ==========
 
-If you wish to view PaoPhotos running on the web as well as the source code you can do so at [codesandbox](https://codesandbox.io/s/github/mpholganza/paophotos)
+If you wish to view PaoPhotos running on the web as well as explore the source code you can do so at [codesandbox](https://codesandbox.io/s/github/mpholganza/paophotos)
 
 To run this app locally run the following:
 
